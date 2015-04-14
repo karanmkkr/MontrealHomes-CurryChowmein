@@ -1,0 +1,47 @@
+<!--  modified after meeting in 20150411   -->
+{% extends "ccm/ccm_base.html" %}
+
+
+{% block content %}
+
+<h1>  Search result  </h1>
+
+<!--
+<form method="POST" action=""> {% csrf_token %}
+{{form.as_p}}
+<input type='submit' value='Search' class='btn' />
+</form>
+-->
+
+<table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Property ID</th>
+          <th>Address</th>
+          <th>Bedroom number</th>
+          <th>Batchroom number</th>
+          <th>Price</th>
+          <th>Convenient Point</th>
+          <!--th>Status</th-->
+        </tr>
+      </thead>
+      <tbody>
+
+        {% for Property in Properties %}
+        <tr>
+          <th scope="row"></th>
+          <td>{{Property.Property_ID}}</td>
+          <td>{{Property.Address}}</td>
+          <td>{{Property.Bedroom_Number}}</td>
+          <td>{{Property.Bathroom_Number}}</td>
+          <td>{{Property.Price}}</td>
+          <td></td>
+          <!--td>Availabe</td-->
+          <td><a href="/ccm/d_info/{{Property.Property_ID}}/" class="btn btn-default btn-lg active" role="button">See Detail</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+{% endblock %}

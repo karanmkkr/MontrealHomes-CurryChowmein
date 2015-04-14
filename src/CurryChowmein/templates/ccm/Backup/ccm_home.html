@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<h1>  Hello, welcome home  </h1>
+
+<form method="POST" action="/postad/"> {% csrf_token %}
+{{form.as_p}}
+<input type='submit' value='PostAD' class='btn' />
+</form>
+
+{% endblock %}

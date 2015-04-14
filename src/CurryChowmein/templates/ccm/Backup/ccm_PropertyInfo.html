@@ -1,0 +1,107 @@
+<!--  modified after meeting in 20150411   -->
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<h1>  Property Info  </h1>
+
+<!--
+<form method="POST" action=""> {% csrf_token %}
+{{form.as_p}}
+<input type='submit' value='Search' class='btn' />
+</form>
+-->
+
+
+<table class="table table-striped">
+      <tbody>
+        <tr>
+          <td>{{AProperty.Property_ID}}</td>
+          <td>{{AProperty.Address}}</td>
+          <td>Bedroom:{{AProperty.Bedroom_Number}}</td>
+          <td>BathRoon:{{AProperty.Bathroom_Number}}</td>
+          <td>{{AProperty.Price}}</td>
+          <td>CP:{{AProperty.CD_Garage_Flag}}</td>
+          <!--td>{{strStatus}}</td-->
+        </tr>
+      </tbody>
+</table>
+
+<img src="{{AProperty.Photo_link}}" alt="..." class="img-rounded">
+
+
+<h3>Description</h3>
+<p>
+	{{AProperty.Description}}
+</p>
+
+<h3>More info</h3>
+<dl class="dl-horizontal">
+      <dt>Build Type</dt>
+      <dd>{{AProperty.MI_Build_Type}}</dd>
+      <dt>Land size</dt>
+      <dd>{{AProperty.MI_Land_Size}}</dd>
+      <dt>Build in</dt>
+      <dd>{{AProperty.MI_Build_In}}</dd>
+      <dt>Storeys</dt>
+      <dd>{{AProperty.MI_Storeys_Number}}</dd>
+      <dt>Munipal assessment</dt>
+      <dd>{{AProperty.MI_Municipal_Assessment}}</dd>
+</dl>
+
+<h3>Convenient amenity</h3>
+<ul>
+      {% if AProperty.CD_Garage_Flag %}
+        <li>Garage</li>
+      {% endif %}
+
+      {% if AProperty.CD_Metro_Flag %}
+        <li>METRO</li>
+      {% endif %}
+
+      {% if AProperty.CD_Highway_Flag %}
+       <li>Highway</li>
+      {% endif %}
+
+      {% if AProperty.CD_Communicty_Center_F %}
+        <li>Community Center(CLSC,Sport,Library</li>
+      {% endif %}
+
+      {% if AProperty.CD_Culture_Center_F %}
+        <li>Culture Center(Cinema,ART)</li>
+      {% endif %}
+
+      {% if AProperty.CD_Shopping_Mall_Flag %}
+        <li>Shopping Mall</li>
+      {% endif %}
+
+      {% if AProperty.CD_PARK_Hospital_Flag %}
+        <li>Park/Hosiptal</li>
+      {% endif %}
+
+      {% if AProperty.CD_School_Flag %}
+        <li>School(Elementory/High School/CEGEP</li>
+      {% endif %}
+    </ul>
+
+<h3>Broker info</h3>
+<address>
+  <strong>{{A_broker.Company_Name}}</strong><br>
+  {{A_broker.Broker_Name}}<br>
+  {{A_broker.Company_Address}}<br>
+  {{A_broker.Company_City}}, CA {{A_broker.Company_Post_Code}}<br>
+  <abbr title="Phone">P:</abbr> {{A_broker.Broker_Phone}}  <br|>
+  <a href="mailto:#">{{A_broker.Broker_Email}}</a>
+</address>
+
+
+<h3>Deal info</h3>
+<dl class="dl-horizontal">
+     <!-- <dt>2 offers</dt>
+      <dd>Mar 20, 2015</dd> -->
+      <dt>{{strStatus}}</dt>
+      <dd></dd>
+</dl>
+
+{% endblock %}

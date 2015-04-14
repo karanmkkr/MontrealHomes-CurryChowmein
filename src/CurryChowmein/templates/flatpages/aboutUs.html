@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+   <link rel="stylesheet" href="mth.css">
+   <style>
+      #map-canvas {
+        width: 500px;
+        height: 400px;
+		float:right;
+      }
+	  
+	  body {
+    background-color: lightblue;
+}
+
+h1 {
+    color: blue;
+    margin-left: 20px;
+}
+ body {background-color:lightgray;}
+ 
+#nav {
+    line-height:30px;
+    background-color:#777777;
+	background-color:rgba(255,0,0,0.5);
+    height:700px;
+    width:1000px;
+    font-style: oblique;
+    float:center;
+    padding:15px; 
+	}
+	#nav2 {
+    line-height:30px;
+    background-color:#777777;
+	background-color:rgba(255,0,0,0.5);
+    height:450px;
+    width:1000px;
+    font-style: oblique;
+    float:center;
+    padding:15px; 
+	}
+#vedo {
+       float:center;
+	   text-align:center;
+   	}
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    background-color: #b0e0e6;
+}
+
+  p    {color: white; font-size: 20px; align="center"}
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map-canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(44.5403, -78.5463),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+
+<body background="Montreal.jpg"  >
+<div id="nav" class="center" >
+
+
+
+<p >Montreal is one of the most liveable city in the world. As a North American city, Montreal shares many cultural characteristics with the rest of the continent. </p>
+<b>Language & culture</b>
+<p >Montreal is the second-largest French-speaking city in the world after Paris. While the city’s official language is French, Montreal is easy to navigate for both English and French speakers. Meeting new people is a great way to expand your knowledge of a second (or third!) language.
+
+<p >Bilingualism is a part of Montreal’s strong cultural tradition and adds to the inspiring atmosphere of art, music, literature and innovative technology. From a history of cutting-edge architecture to icons like Leonard Cohen and Mordechai Richler, to storied Old Montreal and the legendary Schwartz’s Deli, the city thrives on art, culture and history.</p>
+<p >Montreal is known for its festivals which run one after another all summer long, but festival season never really ends, in this city there is always something to celebrate!</p>
+<b>Transportation</b>
+
+<p >Montreal has an extensive and accessible public transportation system. The Société de transport de Montréal (STM) and the Agence métropolitaine de transport cover the entire island with a network of busses, Canada's longest subway system and trains, respectively.
+</p >
+<p >Students receive reduced monthly transit fare with the STM OPUS card. Concordia also provides a free shuttle bus between its two campuses for the university community.
+</p >
+</div>
+
+
+<div id="vedo">
+<iframe width="1000" height="505" src="http://www.youtube.com/embed/i81wNpTgGcI">
+</iframe>
+</div>
+<div id="nav2" class="center" >
+<b>Musics</b>
+<p>It has a tradition of producing both jazz and rock music. 
+
+The city has also produced much talent in the fields of visual arts, theatre, music, and dance. You must want to find a lovely home in this beautiful city.
+
+ Montreal was referred to as "Canada's Cultural Capital" by Monocle Magazine. The city is Canada's centre for French-language television productions, radio, theatre, film, multimedia and print publishing. The Quartier Latin is a neighbourhood crowded with cafés animated by this literary and musical activity.[citation needed] Montreal's many cultural communities have given it a distinct local culture.
+
+As a North American city, Montreal shares many of the cultural features characteristic of the other metropolis on the continent, including representations in all traditional manifestation of high culture, a long-lasting tradition of jazz and rock music, and tentative experimentation in visual arts, theater, music, and dance. Yet, being at the confluence of the French and the English traditions, Montreal has developed a unique and distinguished cultural face in the world. Another distinctive characteristic of Montreal culture life is to be found in the animation of its downtown, particularly during summer, prompted by cultural and social events, or festivals.
+</p>
+ <p>So let us start the enjoyable journey on discovery the most suitable real- estate for you!</p>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+
+{% block styles %}
+
+  <style>
+      body {
+        border-top: 4px solid #E47541;
+        /*min-height: 5000px;*/
+        /*min-width: 5000px;*/
+        background: url('{% static "img/Montreal.jpg" %}') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: conver;
+        background-size: cover;
+        /*background-image: url('{% static "img/beach.jpg" %}');*/
+        /*background-image:url('https://lh4.googleusercontent.com/-FsgMNhfQLSg/AAAAAAAAAAI/AAAAAAAAaRY/3VnF3vSuWKk/photo.jpg');*/
+        /*background-repeat: repeat-x;*/
+      }
+     
+      
+    </style>
+
+{% endblock %}
+
+{% block content %}
+
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+   <!-- <div class="jumbotron"   style='background-image: "img/Mtl1.jpg"'>; -->
+    <div class="jumbotron"  >
+      <div class="container">
+        
+          <h1>Montreal Homes</h1>
+          <p>Welcome to Montreal homes - Right place to search for your dream house</p>
+          <div class='col-sm-3'>
+          <p><a class="btn btn-default btn-lg btn-block" href="/pages/about" role="button">About Us &raquo;</a></p>
+        </div>
+        
+      </div>
+    </div>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="navbar-brand" href="#">Montreal Homes</a>
+        </div>
+
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <!-- <li class="active"><a href="#">Home</a></li> -->
+            <!-- <li><a href="/pages/about/">About Us</a></li> -->
+            <li><a href="/ccm/search/">Search Properties</a></li>
+            <!-- <li><a href="/ccm/s_result/">Buy</a></li> -->
+            <!-- <li><a href="ccm/d_info/">Search properties</a></li> -->
+            <li><a href="/pages/broker">Broker</a></li>
+            <li><a href="ccm/postad/">Post an Ad</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/pages/news">News</a></li>
+            
+            <form class="navbar-form navbar-right">
+              
+              <!-- <button type="submit" class="btn btn-success" on click =" ">Sign in</button>
+
+              <button type="submit" class="btn btn-success">Register</button> -->
+              {% if user.is_authenticated %}
+              <a class="nav navbar-nav" href = '/accounts/logout/'>Logout</a>
+              
+                <!-- <a href = '/accounts/logout/'>Logout</a> -->
+              {% else %}
+               <a class="navbar-brand" href = '/accounts/login/'>Login</a>
+               <a class="navbar-brand" href = '/accounts/register/'>Register</a>
+              {% endif %}
+            
+          </form>
+             
+            
+          </ul>
+        </div><!--/.nav-collapse-->
+
+        <!-- <div id="navbar" class="navbar-collapse collapse">
+          
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div> -->
+            
+           
+        </div><!--/.navbar-collapse-->  
+     
+    </nav>    
+
+
+    <!-- <div class = "container">
+      <h3 class = "muted">Montreal Homes
+        <small class = 'pull right'>
+          {% if user.is_authenticated %}
+          <a href = '/accounts/logout/'>Logout</a>
+          {% else %}
+          <a href = '/accounts/login/'>Login</a>
+          <a href = '/accounts/register/'>Register</a>
+          {% endif %}
+        </small>
+      </h3>
+
+      <div class = "navbar">
+        <div class = "navbar-inner">
+          <div class = "contatiner">
+            <ul class = "nav">
+              <li><a href = "/">Home</a><li>
+              <li><a href = "/">Home</a><li>
+              <li><a href = "/">Home</a><li>
+              <li><a href = "/">Home</a><li>
+            </ul>
+           </div> 
+          </div>
+         </div>   
+       </div>  --> 
+
+     
+
+
+
+   
+
+<div class='container' style='text-align:center;color:#FBF8F8;' id="signup" >
+<div class='col-sm-6 col-sm-offset-3'>
+<i class="fa fa-unlock fa-5x"></i>
+  <h1>Subscribe</h1>
+
+  <form class='form-horizontal' method="POST" action=""> {% csrf_token %}
+    <div class='form-group form-group-lg'>
+    {% if form.email.errors %}
+     {% for err in form.email.errors %}
+     <div class="alert alert-danger" role="alert">{{ err }}</div>
+    <div class="alert alert-danger" role="alert">Your Email is required</div>
+    {% endfor %}
+    {% endif %}
+     
+          <div class="input-group">
+        <input class='form-control' type="email" name="email" placeholder="Your email..." />
+            <span class='input-group-btn'>
+          <input type='submit' value='Join' class='btn btn-primary btn-lg' />
+          </span>
+        </div>
+    </div>
+  </form>
+  <p class='lead'>Sign up here. <br/> Get First News on Content</p>
+</div>
+
+
+</div>
+
+ 
+<!-- <div class='row featured-row'>
+  <div class='col-sm-12'>
+   
+ 
+    <div class='col-sm-3 col-sm-offset-3'>
+      <i class="fa fa-upload fa-3x"></i>
+      <h2>News</h2>
+      <p class='lead'>
+      </p>
+    </div>
+    <div class='col-sm-3'>
+      <i class="fa fa-upload fa-3x"></i>
+      <h2>Share</h2>
+      <p class='lead'>
+      </p>
+    </div>
+
+    <div class='col-sm-3'>
+      <i class="fa fa-upload fa-3x"></i>
+      <h2>Contact Us</h2>
+      <p class='lead'>
+      </p>
+    </div>
+  </div>
+
+</div> -->
+
+
+
+<<!-- div class='row featured-row'>
+  <div class='col-sm-12'>
+   
+    <div class='col-sm-3'>
+      <i class="fa fa-upload fa-3x"></i>
+      <h2>Services Provided</h2>
+      <a href="/pages/about/">About Us</a>
+    </div>
+
+    <div class='col-sm-3'>
+      <i class="fa fa-upload fa-3x"></i>
+      <h2>Sell</h2>
+    </div>
+
+    <div class='col-sm-3'>
+      <i class="fa fa-upload fa-3x"></i>
+      <h2>About us</h2>
+    </div>
+
+
+    <div class='col-sm-3'>
+      <i class="fa fa-upload fa-3x"></i>
+      <h2>Post an ad</h2>
+    </div>
+
+
+  </div>
+
+</div> -->
+
+</div>
+
+
+{% endblock %}

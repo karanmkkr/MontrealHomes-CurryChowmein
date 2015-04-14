@@ -1,0 +1,15 @@
+{% extends "ccm/ccm_base.html" %}
+
+
+
+
+{% block content %}
+
+<h1>  Search Property  </h1>
+
+<form method="POST" action="/ccm/s_result/"> {% csrf_token %}
+{{form.as_p}}
+<input type='submit' value='Search' class='btn' />
+</form>
+
+{% endblock %}

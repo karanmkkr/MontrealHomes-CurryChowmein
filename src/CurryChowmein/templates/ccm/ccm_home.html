@@ -1,0 +1,13 @@
+{% extends "ccm/ccm_base.html" %}
+
+
+{% block content %}
+
+<h1> Post Advertisement</h1>
+
+<form method="POST" action="/ccm/postad/"> {% csrf_token %}
+{{form.as_p}}
+<input type='submit' value='PostAD' class='btn' />
+</form>
+
+{% endblock %}
